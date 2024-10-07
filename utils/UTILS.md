@@ -1,0 +1,2 @@
+# Utils Documentation
+These utilities are used to help with the development and testing of the FLL Spike robot code. They are not robot game code and don't contain robot game logic, and they won't run in FLL Spike robot game code. Most of utilities are from internet and AI tools like Cursor, created and tested by team coaches. They should not be considered as part of the robot game code, and should not be used in robot game code. 
