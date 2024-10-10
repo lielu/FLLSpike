@@ -83,6 +83,7 @@ import runloop
 runloop.run(straight(100, 50))
 sys.exit(0)
 ```
+The above process has been automated using the `monitor_llsp3_to_python_mac.py` or `monitor_llsp3_to_python_win.py` script, which is explained in the [README.md](../README.md) file.
 
 ## References
 The library export method has been documented at https://primelessons.org/en/PyProgrammingLessons/SP3ImportingCustomLibrariesPython.pdf.

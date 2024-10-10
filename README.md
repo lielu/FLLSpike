@@ -17,7 +17,7 @@ Follow the instructions below to get started on Python and Spike programming for
 When you create a Spike project, the code (Python or block code) will be saved as LLSP3 files. LLSP3 files are the original format used by the Spike app or website. When you create a new project, choose the `Python` option, and save it to the `FLLSpike/src/runs` folder with a chosen project name using the `Save As` menu. This will allow the LLSP3 files to be saved to Github backend store later.
 
 ### Saving LLSP3 and Python files into Github
-Python code is not directly saved in the LLSP3 files. Rather, it's captured in another format, which we need to extract it from the LLSP3 files. To extract the Python code from LLSP3 files automatically, use the `utils/monitor_llsp3_to_python_mac.py` or `utils/monitor_llsp3_to_python_win.py` script with the following command:
+Python code is not directly saved in the LLSP3 files. Rather, it's captured in another format, which we need to extract it from the LLSP3 files. To extract the Python code from LLSP3 files and generate library code that can be installed at runtime automatically, use the `utils/monitor_llsp3_to_python_mac.py` or `utils/monitor_llsp3_to_python_win.py` script with the following command:
 
 #### macOS
 ```sh

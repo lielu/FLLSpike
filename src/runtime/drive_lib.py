@@ -1,3 +1,6 @@
+
+# Generated code
+export_code: str = """
 from hub import port, motion_sensor
 import motor #imports a ability to control a single motor
 import motor_pair #imports a pair of motors moving like one
@@ -59,3 +62,21 @@ if __name__ == "__main__":
     runloop.run(backward(50, 50))
     import sys
     sys.exit() # ok it is working now, right?
+"""
+
+def exportProgram():  # Function to export the library code string
+    import os
+    global export_code
+    os.chdir('/flash')  # change directory to root
+    try:
+        os.remove('drive.py')  # remove any existing library file of the same name
+    except:
+        pass
+    f = open('drive.py', 'w+')  # Create a new file drive.py in the SPIKE hub root
+    f.write(export_code)  # Write out the library code string to the drive.py file
+    f.close()
+
+if __name__ == "__main__":
+    import sys
+    exportProgram()  # Runs the export function    
+    sys.exit(0)

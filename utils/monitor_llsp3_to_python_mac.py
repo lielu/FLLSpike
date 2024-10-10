@@ -103,7 +103,7 @@ if __name__ == "__main__":
         # Actually run the script
         log("Service running")
         log("Example: python3 monitor_llsp3_to_python_mac.py run --directory /path/to/monitor")
-        monitor_llsp3_changes(args.directory)
+        monitor_llsp3_changes(args.directory, ["drive.py"])
 
     elif args.action == "stop":
         # Unload the service
