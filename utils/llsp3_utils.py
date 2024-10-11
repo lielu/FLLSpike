@@ -283,10 +283,6 @@ def create_empty_llsp3(file_path, project_name):
     log(f"Empty LLSP3 file created at {file_path}")
     return file_path
 
-
-
-
-
 # Example usage
 if __name__ == "__main__":
     # directory_to_monitor = "."  # Replace with the directory path you want to monitor
