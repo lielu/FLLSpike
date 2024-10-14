@@ -10,8 +10,6 @@ from llsp3_utils import *
 import plistlib
 import subprocess
 
-monitored_libraries = ["drive.py"]
-
 def create_launchd_plist(directory_to_monitor):
     # Define the content for the LaunchAgent plist file
     plist_content = {
@@ -105,7 +103,7 @@ if __name__ == "__main__":
         # Actually run the script
         log("Service running")
         log("Example: python3 monitor_llsp3_to_python_mac.py run --directory /path/to/monitor")
-        monitor_llsp3_changes(args.directory, monitored_libraries)
+        monitor_llsp3_changes(args.directory)
 
     elif args.action == "stop":
         # Unload the service

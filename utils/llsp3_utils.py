@@ -1,18 +1,33 @@
-import json
 import os
+import sys
+import json
 import zipfile
 import tempfile
-import shutil
-import sys
 import time
 import logging
 
-logging.basicConfig(stream=sys.stdout, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.DEBUG)
+from logging.handlers import RotatingFileHandler
+
+def setup_logger(logger_name, log_file, level=logging.ERROR):
+    log_formatter = logging.Formatter('%(asctime)s %(process)d:%(thread)d %(name)s %(message)s')
+    my_handler = RotatingFileHandler(log_file, maxBytes=100 * 1024 * 1024, backupCount=5)
+    my_handler.setFormatter(log_formatter)
+    my_handler.setLevel(level)
+    l = logging.getLogger(logger_name)
+    l.handlers[:] = []
+    l.addHandler(my_handler)
+
+log_file=os.path.splitext(__file__)[0]+".log"
+setup_logger('debug', log_file)
+logger = logging.getLogger('debug')
 
 def log(message):
-    logging.debug(message)
+    logger.error(message)
+    # logging.info(message)
     # print(message)
     # sys.stdout.flush()
+
+monitored_libraries = ["drive.py"]
 
 def extract_python_from_llsp3(llsp3_file_path):
     # Create a temporary directory to extract files
@@ -42,8 +57,8 @@ def extract_python_from_llsp3(llsp3_file_path):
 # llsp3_file_path = "existing_project.llsp3"  # Replace with the path to your LLSP3 file
 # extract_python_from_llsp3(llsp3_file_path)
 
-def monitor_llsp3_changes(llsp3_directory_path, python_file_names):
-    log(f"Monitoring LLSP3 file changes in {llsp3_directory_path} and Python file changes for {python_file_names}")
+def monitor_llsp3_changes(llsp3_directory_path):
+    log(f"Monitoring LLSP3 file changes in {llsp3_directory_path} and Python file changes for {monitored_libraries}")
     last_modified_times = {}
 
     while True:
@@ -58,7 +73,7 @@ def monitor_llsp3_changes(llsp3_directory_path, python_file_names):
                         extract_python_from_llsp3(file_path)
                         last_modified_times[file_path] = current_mtime
 
-        for filename in python_file_names:
+        for filename in monitored_libraries:
             file_path = os.path.join(llsp3_directory_path, filename)
             if os.path.exists(file_path) and file_path.endswith('.py') and not file_path.endswith('_lib.py'):
                 current_mtime = os.path.getmtime(file_path)

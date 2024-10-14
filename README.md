@@ -27,9 +27,9 @@ Python code is not directly saved in the LLSP3 files. Rather, it's captured in a
 #### Windows
 ```sh
     cd <your-local-repo-folder>/FLLSpike/utils
-    python monitor_llsp3_to_python_win.py start --directory <your-local-repo-folder>/FLLSpike/src/libs
+    monitor_llsp3_windows.bat
 ```
-Please note that the extracted Python code shouldn't be edited directly. The primary purpose of the extracted Python code is to allow others to review the code changes before they are pushed to Github, and also check the Python code changes later.
+Please note that the extracted Python code shouldn't be edited directly outside of Spike app. The primary purpose of the extracted Python code is to allow others to review the code changes before they are pushed to Github, and also check the Python code changes later.
 
 ### Loading LLSP3 files into Spike
 In Spike app, go to `File -> Open`, and select the `LLSP3` file in the `src` folder, or any other folder containing LLSP3 files.
