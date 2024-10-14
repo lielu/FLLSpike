@@ -20,14 +20,26 @@ When you create a Spike project, the code (Python or block code) will be saved a
 Python code is not directly saved in the LLSP3 files. Rather, it's captured in another format, which we need to extract it from the LLSP3 files. To extract the Python code from LLSP3 files and generate library code that can be installed at runtime automatically, use the `utils/monitor_llsp3_to_python_mac.py` or `utils/monitor_llsp3_to_python_win.py` script with the following command:
 
 #### macOS
+Run the following command to start the LLSP3 file monitoring process as a background service:
 ```sh
     cd <your-local-repo-folder>/FLLSpike/utils
     python3 monitor_llsp3_to_python_mac.py start --directory <your-local-repo-folder>/FLLSpike/src/libs
 ```
+If you want to stop the LLSP3 file monitoring process, run the following command:
+```sh
+    cd <your-local-repo-folder>/FLLSpike/utils
+    python3 monitor_llsp3_to_python_mac.py stop
+```
 #### Windows
+Run the following command to start the LLSP3 file monitoring process as a Windows service:
 ```sh
     cd <your-local-repo-folder>/FLLSpike/utils
     monitor_llsp3_windows.bat
+```
+If you want to stop the LLSP3 file monitoring service, run the following command:
+```sh
+    cd <your-local-repo-folder>/FLLSpike/utils
+    python monitor_llsp3_to_python_windows.py stop
 ```
 Please note that the extracted Python code shouldn't be edited directly outside of Spike app. The primary purpose of the extracted Python code is to allow others to review the code changes before they are pushed to Github, and also check the Python code changes later.
 
