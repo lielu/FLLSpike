@@ -1,7 +1,7 @@
 # Sharing Library Modules for FLL Spike Robotics
 
 ## Overview
-This document outlines the process of creating libraries for Spike Prime and installing them at runtime using the automated tools provided in this repository.
+This document outlines the process of creating libraries for Spike Prime and installing them at runtime using the automated tools provided in this repository. Library code includes basic movement and attachment control modules, as well as run code assigned to each team member to develop. For example, the `drive.llsp3` file contains the library code for driving and turning, and the `run_red.py` file contains the run code for run 1, represented by color red. Run code, as well as other basic library code, will be saved as LLSP3 files in the `src/libs/` directory so they can be monitored and imported together.
 
 ## Prerequisites
 - Spike app installed on your computer. Or you can choose to use the [web-based Spike IDE](https://spike.legoeducation.com/) instead.
@@ -9,15 +9,27 @@ This document outlines the process of creating libraries for Spike Prime and ins
 - Clone this repository to your computer. If you have already cloned it previously, make sure it is up to date by pulling the latest changes from the repository by running `git pull` in the terminal.
 - Follow the instructions in the [README.md](../README.md#saving-llsp3-and-python-files-into-github) file and start monitoring the LLSP3 files to Python code changes.
 
-### macOS
+#### macOS
+Run the following command to start the LLSP3 file monitoring process as a background service:
 ```sh
 cd <your-local-repo-folder>/FLLSpike/utils
-python3 monitor_llsp3_to_python_mac.py start --directory <your-local-repo-folder>/FLLSpike/src
+python3 monitor_llsp3_to_python_mac.py start --directory <your-local-repo-folder>/FLLSpike/src/libs
 ```
-### Windows
+If you want to stop the LLSP3 file monitoring process, run the following command:
 ```sh
 cd <your-local-repo-folder>/FLLSpike/utils
-python monitor_llsp3_to_python_win.py start --directory <your-local-repo-folder>/FLLSpike/src
+python3 monitor_llsp3_to_python_mac.py stop
+```
+#### Windows
+Run the following command to start the LLSP3 file monitoring process as a Windows service:
+```sh
+cd <your-local-repo-folder>/FLLSpike/utils
+monitor_llsp3_windows.bat
+```
+If you want to stop the LLSP3 file monitoring service, run the following command:
+```sh
+cd <your-local-repo-folder>/FLLSpike/utils
+python monitor_llsp3_to_python_windows.py stop
 ```
 
 ## Creating a Library
