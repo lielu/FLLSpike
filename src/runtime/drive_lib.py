@@ -21,7 +21,7 @@ async def forward(distance, speed): #FUNCTION
     motor.reset_relative_position(port.C, 0) 
     while motor.relative_position(port.C) < distanceInDegrees:
         current_yaw_position = motion_sensor.tilt_angles()[0]
-        adjusted = int(round(-0.1 * current_yaw_position)) # tilt_angles are in decidegrees (degrees * 10)
+        adjusted = int(round(0.3 * current_yaw_position)) # tilt_angles are in decidegrees (degrees * 10)
         try:
             motor_pair.move_for_degrees(motor_pair.PAIR_1, 10, adjusted, velocity=int(round(speed/100.0*660.0)))
         except(ValueError):
@@ -34,9 +34,9 @@ async def backward(distance, speed): #FUNCTION
     global current_yaw_position, distanceInDegrees
     distanceInDegrees = distance / 17.5 * 360
     motor.reset_relative_position(port.C, 0)
-    while motor.relative_position(port.C) < distanceInDegrees:
+    while abs(motor.relative_position(port.C)) < distanceInDegrees:
         current_yaw_position = motion_sensor.tilt_angles()[0]
-        adjusted = int(round(-0.1 * current_yaw_position)) # tilt_angles are in decidegrees (degrees * 10)
+        adjusted = int(round(-0.3 * current_yaw_position)) # tilt_angles are in decidegrees (degrees * 10)
         try:
             motor_pair.move_for_degrees(motor_pair.PAIR_1, 10, adjusted, velocity=-int(round(speed/100.0*660.0)))
         except(ValueError):
