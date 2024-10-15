@@ -3,10 +3,13 @@
 ## Getting Started
 Follow the instructions below to get started on Python and Spike programming for FLL robot games.
 
-1. Install `Python 3.12` from [python.org](https://www.python.org/downloads/)
-2. (Optional) Install Spike IDE from https://education.lego.com/en-us/downloads/spike-app/software/ if you are not running the web version (https://spike.legoeducation.com).
-3. Download [git](https://git-scm.com/downloads), [Github Desktop](https://desktop.github.com/), and [Github CLI](https://cli.github.com/).
-4. Follow instructions at https://docs.github.com/en/get-started/quickstart/set-up-git to set up git and link it with Github Desktop and Github CLI. The recommended way is to use Github CLI `gh auth login` to login with your Github account, and use `gh auth setup-git` to link it with git.
+1. Install `Python 3.12` from [python.org](https://www.python.org/downloads/). For Windows, make sure to select `Add Python to PATH` during installation. You will also need to install [`pip`](https://pip.pypa.io/en/stable/installation/) using the following commands on Windows:
+```sh
+    py -m ensurepip --upgrade
+```
+2. (Optional) Install Spike from https://education.lego.com/en-us/downloads/spike-app/software/ if you are not running the web version (https://spike.legoeducation.com).
+3. Download [git](https://git-scm.com/downloads), [Github Desktop](https://desktop.github.com/), and [Github CLI](https://cli.github.com/). Note: for Github CLI, you will need administrator access to install it (on Windows); if you don't have it, you can download the [zip file with name "GitHub CLI <version> windows amd64"](https://github.com/cli/cli/releases) and execute the `gh` command directly from the extracted folder.
+4. Follow instructions at https://docs.github.com/en/get-started/quickstart/set-up-git to set up git and link it with Github Desktop and Github CLI. The recommended way is to use Github CLI `gh auth login` to login with your Github account.
 5. Clone this repository to your local machine using Terminal (macOS/Linux) or Command Prompt (Windows):
 ```sh
     cd <your-local-repo-folder>
