@@ -55,7 +55,7 @@ async def turnLeft(degrees): #same as right, only left
     await init_drive(port.D, port.C)
     current_yaw_position = motion_sensor.tilt_angles()[0]# Refreshes variable "current_yaw_position"
     while abs(current_yaw_position) < abs(degrees * 10):
-        motor_pair.move_for_degrees(motor_pair.PAIR_1, -1, 100)
+        motor_pair.move_for_degrees(motor_pair.PAIR_1, -10, 100)
         current_yaw_position = motion_sensor.tilt_angles()[0]# Refreshes variable "current_yaw_position"
 
 async def test_drive(): #test code for drive functions

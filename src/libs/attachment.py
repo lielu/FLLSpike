@@ -14,6 +14,9 @@ async def rearLeft(degrees, speed):
 async def rearRight(degrees, speed):
     await run_for_degrees(port.F, degrees, int(round(speed / 100 * -1050)))
 
+async def food():
+    await frontLeft(int((360*6.5)), 100)
+
 async def test_attachment(): #test code for drive functions
     await frontRight(360, 100)
     await frontLeft(360, 100)
@@ -21,6 +24,6 @@ async def test_attachment(): #test code for drive functions
     await rearLeft(360, 100)
 
 if __name__ == "__main__":
-    runloop.run(test_attachment())
+    runloop.run(food())
     import sys #Imports Sys so we can exit code
     sys.exit() #Exits out of code
