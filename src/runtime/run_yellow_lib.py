@@ -7,28 +7,20 @@ from drive import *
 
 from hub import port
 
-async def run_yellow():
-    await frontLeft(int(6.5 * 360), 100)
-
-    await forward(10, 50)
-    await turnLeft(42)
-    await forward(40, 50)
-    time.sleep(0.5)
-    await backward(10, 50)
-    await turnLeft(48)
-    await forward(50, 50)
-    await turnRight(92)
-    await forward(24, 50)
-    await frontLeft(int(6.5 * 360), 100)
-    await backward(24, 50)
-    await frontRight(int(6.5*360), 100)
-    await turnLeft(92)
-    await backward(50, 100)
-    await turnRight(48)
-    await backward(40, 100)
-    import sys
-    sys.exit()
-
+async def run_yellow():#Start right back piece on farthest dark line in red square
+    #Left raises the arm
+    #right lowers the arm
+    await frontLeft(int(1.8 * 360), 50)
+    
+    await forward(65, 50)
+    await turnRight(30)
+    await forward(14, 20)
+    await frontRight(int(3 * 360), 75)
+    await frontLeft(int(3 * 360), 50)
+    await backward(12, 20)
+    await turnLeft(20)
+    await backward(75, 100)
+    await frontRight(int(2 * 360), 75)
 
 
 if __name__ == "__main__":
