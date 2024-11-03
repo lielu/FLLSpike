@@ -5,8 +5,11 @@ from drive import *
 from hub import port
 
 async def main():
-    await forward(50, 50)
-    await turnLeft(45)
+    await forward(40, 50)
+    await turnRight(90)
+    await forward(35, 50)
+    await backward(15, 50)
+    await turnLeft(80)
     await forward(37, 50)
     await turnLeft(95)
     await forward(30, 50)
