@@ -4,6 +4,8 @@ from drive import *
 
 from hub import port
 
+
+#START WITH RIGHT BUMPER ON 1ST THICK LINE FROM RIGHT
 async def run_grey():
     await forward(10, 50)
     await turnLeft(45)
@@ -21,7 +23,26 @@ async def run_grey():
     await turnLeft(86)
     await backward(50, 100)
     await turnRight(48)
-    await backward(40, 100)
+    await backward(35, 100)
+    await frontRight(int(2 * 360), 100)
+
+    # COLLECT 3 KRILL: STARTS IN SAME PLACE AS BEGINNING
+
+    time.sleep(2.5)
+    await forward(20, 50)
+    await turnLeft(29)
+    await frontLeft(3 * 360, 100)
+    await forward(14, 50)
+    await frontRight(550, 100)
+    await turnRight(21.5)
+    await forward(27, 50)
+    await turnRight(35)
+    await frontLeft(350, 100)
+    await forward(10, 50)
+    await frontRight(3 * 360 - 200, 100)
+    await backward(10, 100)
+    await turnLeft(45)
+    await backward(60, 100)
     import sys
     sys.exit()
 
