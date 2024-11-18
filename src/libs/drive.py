@@ -1,30 +1,36 @@
-from hub import port, motion_sensor
+# Drive code
+# initiate drive: prepares robot to drive by assigning motors, reseting sensors
+# forward/backward by degrees: uses relative postition of one drive motor, uses yaw sensor to make robot drive straight
+# turn right and left by degrees: turns with yaw sensor
+# 
+from hub import port, motion_sensor # port allows to connect to other things, motion sensor includes yaw sensor
 import motor #imports a ability to control a single motor
 import motor_pair #imports a pair of motors moving like one
-import runloop
+import runloop # Allows function to run simutaneously like in normal scratch
 
-motor_speed = 1100
-distanceInDegrees = 0
+motor_speed = 1100 # Tells the code the top speed a motor can go
+distanceInDegrees = 0 # Defines a distance for later use
 current_yaw_position = 0#Sets yaw position to 0
 
 async def init_drive(port1, port2):
     motor_pair.unpair(motor_pair.PAIR_1) #Unpair first or it will encounter an error later.
     motor_pair.pair(motor_pair.PAIR_1, port1, port2) #Motor pair called motor_pair.PAIR_1, left motor: port D, right motor: port C
     motion_sensor.reset_yaw(0) #Makes the robot think its facing forward.
-    runloop.until(motion_sensor.stable)
+    runloop.until(motion_sensor.stable) # waits until the motion sensor senses the hub is stable
 
-async def forwardByDegrees(distance, speed): #FUNCTION
-    await init_drive(port.D, port.C)#Waits for init_drive() to initialize
+async def forwardByDegrees(distance, speed): #uses relative postition of one drive motor, uses yaw sensor to make robot drive straight
+    await init_drive(port.D, port.C)#Waits for init_drive() to initialize - connect to driving motors and reset yaw to 0
     global current_yaw_position, distanceInDegrees # Global variables: available outside of function
-    distanceInDegrees = distance / 17.5 * 360#Sets how far the motor should turn in degrees
-    motor.reset_relative_position(port.C, 0) #Sets the relative position to 0 so we can track its rotations
+    distanceInDegrees = distance / 17.5 * 360#Sets how far the motor should turn in degrees - 1 rotation = 17.5 cm
+    motor.reset_relative_position(port.C, 0) #Sets the relative position of the motor C to 0 so we can track its rotations
     while motor.relative_position(port.C) < distanceInDegrees: #repeats the following code until it has moved far enough
-        current_yaw_position = motion_sensor.tilt_angles()[0]#Sets yaw position to 0
-        adjusted = int(round(0.3 * current_yaw_position)) # tilt_angles are in decidegrees (degrees * 10)
+        current_yaw_position = motion_sensor.tilt_angles()[0]#Sets current yaw position to variable. LEFT = POSITIVE 0 to 300. RIGHT = NEGATIVE 0 to -300
+        adjusted = int(round(0.3 * current_yaw_position)) # tilt_angles are in decidegrees (degrees * 10) - this will drive robot the opposite way. LEFT = NEGATIVE and RIGHT = POSITIVE.
         #rotate 60 degrees or the remaining degrees to our distance, whichever is smaller
         rotation=60 if distanceInDegrees-abs(motor.relative_position(port.C))> 60 else distanceInDegrees-abs(motor.relative_position(port.C))
         try: #attempts to try this
             motor_pair.move_for_degrees(motor_pair.PAIR_1, int(rotation), adjusted, velocity=int(round(speed/100.0*motor_speed))) #Move forward 60 degrees, check again
+            # LIPIN PAUSE
         except(ValueError):#This runs if the robot finds that the value is too big(100, -100)
             #print('value error: ', adjusted)##prints if finds error
             motor_pair.move_for_degrees(motor_pair.PAIR_1, int(rotation), int(round(adjusted / 3)), velocity=int(round(speed/100.0*motor_speed))) # Reduces turn amount so no value error
@@ -107,11 +113,13 @@ async def turnLeft(value, mode='degrees'): #same as right, only left
         await turnbytime(value, -1)
 
 async def test_drive(): #test code for drive functions
+    await forwardByDegrees(50, 50)
+    '''
     await turnRight(5, 'time')
     await forward(10,50)
     await turnLeft(5, 'time')
     await backward(10,50)
-    await turnRight(5, 'time')
+    await turnRight(5, 'time')'''
 
 if __name__ == "__main__":
     runloop.run(test_drive())
