@@ -47,11 +47,16 @@ async def run_grey():
     #time.sleep(5)
     # Navigate to first krill + seewead, pick up
 
-    await frontLeft(4*360)
-
-    await frontLeft(7*360, 100)
-    await forward(45, 50)
+    await frontLeft(4*360, 100)
+    await forward(28, 50)
+    await turnLeft(15)
     await frontRight(4*360, 100)
+    await turnRight(15)
+    await backward(25, 100)
+
+    '''await frontLeft(7*360, 100)
+    await forward(45, 50)
+    await frontRight(4*360, 100)'''
 
     import sys
     sys.exit()
