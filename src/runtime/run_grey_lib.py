@@ -13,7 +13,7 @@ async def run_grey():
     '''# Navigate to squid
     await forward(10, 50)
     await turnLeft(45)
-    
+
     # Drop squid into basket
     await forward(40, 50)
     time.sleep(0.5)
@@ -25,9 +25,9 @@ async def run_grey():
     await turnRight(88)
 
     # Drop and move away
-    await forward(22, 50)
+    await forward(20, 50)
     await frontLeft(int(6.5 * 360), 100)
-    await backward(10, 50)
+    await backward(12, 50)
     await frontRight((5 * 360), 100)
 
     # Navigate to home
@@ -38,23 +38,20 @@ async def run_grey():
     await backward(35, 100)
     await frontRight(int(2 * 360), 100)'''
 
-    # COLLECT 3 KRILL: STARTS IN SAME PLACE AS BEGINNING
+    '''COLLECTION: STARTS AT THE FIRST THIN LINE AFTER THE SECOND
+    THICK LINE'''
+
     ''' Wait to let person add seperate attatchment + move
     to start position'''
-    
-    #time.sleep(3)
-    # Navigate to first krill + seewead, pick up
-    '''await forward(13, 50)
-    await turnLeft(15)
-    await frontLeft(int(6.5*360), 100)
-    await forward(30, 50)
-    await frontRight(3*360, 100)
-    await backward(5, 50)
-    await frontRight(int(3.5*360), 100)
-    await backward(25, 100)
-    await turnRight(22)
-    await backward(13, 100)'''
 
+    #time.sleep(5)
+    # Navigate to first krill + seewead, pick up
+
+    await frontLeft(4*360)
+
+    await frontLeft(7*360, 100)
+    await forward(45, 50)
+    await frontRight(4*360, 100)
 
     import sys
     sys.exit()
