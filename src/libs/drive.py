@@ -89,7 +89,8 @@ async def backward(value, speed, mode='distance'): #Basically the same as the fi
     motor_pair.stop(motor_pair.PAIR_1)#stops motor after done with distance
 
 async def turnbytime(time, mod):
-    await motor_pair.move_for_time(motor_pair.PAIR_1, time * 1000, mod * 100) #turn for small amount
+    await motor_pair.move_for_time(motor_pair.PAIR_1, time * 1000, mod * 100, stop=motor.COAST) #turn for small amount
+    motor.stop(motor_pair.PAIR_1)
 
 async def turnRight(value, mode='degrees'): #Function for turn right code
     await init_drive(port.D, port.C) # Waits for initiation
@@ -106,33 +107,11 @@ async def turnLeft(value, mode='degrees'): #same as right, only left
         await turnbytime(value, -1)
 
 async def test_drive(): #test code for drive functions
-
-    #await init_drive(port.D, port.C)
-    await forward(65, 50) #Moves robot straight toward mission 3
-    #print("turn")
-    await turnRight(30) #Turns first turn to straighten out robot toward mission 3
-    await forward(12, 20)
-    #await frontRight(int(3 * 360), 75)
-    #await frontLeft(int(3 * 360), 50) #Lowers arm to solve mission
-    await backward(10, 35)
-    await turnRight(45) #Ligns up to solve mission 11
-    await forward(70, 80)
-    await turnRight(22)
-    await forward(30, 75)
-    await turnLeft(60)
-    await backward(7, 20)
-    #await frontRight(int(3 * 360), 75) #Puts arm in position
-    await forward(7, 50)
-    #await frontLeft(int(2 * 360), 60) #Lifts arm to solve one whale
-    await backward(12, 40)
-    await turnRight(45)
-    await forward(40, 75)
-    await turnLeft(90)
-    await forward(5, 20) #Aligns to second whale
-    await turnLeft(25)
-    #await frontRight(int(2 * 360), 75)
-    await backward(20, 50) #Starting to go back to blue circle
-    #await motor_pair.move_for_time(motor_pair.PAIR_1, 5000, 0, velocity=int(round(100/100.0*1100.0)))
+    await turnRight(5, 'time')
+    await forward(10,50)
+    await turnLeft(5, 'time')
+    await backward(10,50)
+    await turnRight(5, 'time')
 
 if __name__ == "__main__":
     runloop.run(test_drive())
