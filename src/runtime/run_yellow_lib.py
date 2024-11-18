@@ -19,8 +19,8 @@ async def run_yellow():#Start right back piece on farthest dark line in red squa
     await forward(65, 50) #Moves robot straight toward mission 3
     await turnRight(30) #Turns first turn to straighten out robot toward mission 3
     await forward(12, 20)
-    await frontRight(int(3 * 360), 75)
-    await frontLeft(int(3 * 360), 50) #Lowers arm to solve mission
+    await frontRight(int(5 * 360), 75) #Lowers arm to solve mission
+    await frontLeft(int(3 * 360), 50) 
     await backward(10, 35)
     await turnRight(45) #Ligns up to solve mission 11
     await forward(70, 80)
@@ -38,7 +38,7 @@ async def run_yellow():#Start right back piece on farthest dark line in red squa
     await forward(5, 20) #Aligns to second whale
     await turnLeft(25)
     await frontRight(int(2 * 360), 75)
-    await backward(20, 50) #Starting to go back to blue circle
+    await backward(50, 50) #Starting to go back to blue circle
     #return_from_mission3()    
 
 
