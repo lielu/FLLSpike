@@ -5,14 +5,32 @@ from drive import *
 from hub import port
 
 
-#START WITH RIGHT BUMPER ON 1ST THICK LINE FROM RIGHT
+
 async def run_grey():
-    '''# Navigate to squid
-    await forward(10, 50)
+    #COLLECTION: STARTS AT THE SECOND TO LAST THIN LINE FROM THE RIGHT
+    await frontLeft(int(70*1.2), 100)
+    runloop.run(frontLeft(int(80*1.2), 100), forward(25, 50))
+    await forward(30, 50)
+    await frontRight(int(150*1.2), 100)
+    await turnRight(15)
+    await frontLeft(int(150*1.2), 100)
+    await forward(15, 100)
+    await frontRight(int(360*1.2), 100)
+    await backward(30, 100)
+    await turnLeft(25)
+    await backward(50, 100)
+    
+    # Wait to let person add move to start position
+    time.sleep(5)
+
+    #START WITH LEFT BUMBER ON SECOND TO LAST THIN LINE FROM RIGHT
+
+    # Navigate to squid
+    await forward(25, 50)
     await turnLeft(45)
 
     # Drop squid into basket
-    await forward(40, 50)
+    await forward(14, 15)
     time.sleep(0.5)
 
     # Navigate to drop zone
@@ -33,43 +51,16 @@ async def run_grey():
     await backward(50, 100)
     await turnRight(48)
     await backward(35, 100)
-    await frontRight(int(2 * 360), 100)'''
-
-    '''COLLECTION: STARTS AT THE FIRST THIN LINE AFTER THE SECOND
-    THICK LINE'''
-
-    ''' Wait to let person add seperate attatchment + move
-    to start position'''
-
-    #time.sleep(5)
-    # Navigate to first krill + seewead, pick up
-
-    await frontLeft(4*360, 100)
-    await forward(28, 50)
-    await turnLeft(15)
-    await frontRight(4*360, 100)
-    await turnRight(15)
-    await backward(25, 50)
-    time.sleep(1)
-    await turnRight(8)
-    runloop.run(frontLeft(4 * 360, 100), forward(53, 50))
-    await frontRight(4*360, 100)
-    await backward(54, 100)
-    time.sleep(1.5)
-    await turnRight(5)
-    runloop.run(frontLeft(5*360, 100), forward(60, 50))
-    await frontRight(7*360, 100)
-    await backward(65, 100)
-
-
-    '''await frontLeft(7*360, 100)
-    await forward(45, 50)
-    await frontRight(4*360, 100)'''
+    await frontRight(int(2 * 360), 100)
 
     import sys
     sys.exit()
 
+async def food():
+    await frontLeft(45, 100)
+
 if __name__ == "__main__":
     runloop.run(run_grey())
+    # runloop.run(food())
     import sys
     sys.exit()
