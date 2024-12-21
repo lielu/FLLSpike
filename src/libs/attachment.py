@@ -15,7 +15,7 @@ async def rearRight(degrees, speed):
     await run_for_degrees(port.F, degrees, int(round(speed / 100 * -1050)))
 
 async def food():
-    await frontLeft(int((360*6.5)), 100)
+    await frontLeft(45, 100)
 
 async def test_attachment(): #test code for drive functions
     await frontRight(360, 100)
