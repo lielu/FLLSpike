@@ -33,7 +33,7 @@ async def return_from_mission3():
     await turnLeft(20)
     await backward(75, 100)
     await frontRight(int(2 * 360), 75)
-async def run_yellow():#Start right back piece on farthest dark line in red square
+#async def run_yellow():#Start right back piece on farthest dark line in red square
     #Left raises the arm
     #right lowers the arm
     #### MOVE TO MISSION 3 ####
@@ -90,7 +90,7 @@ async def collecting():
     await forward(30, 70)
     await turnLeft(32)
     await forward(33, 50)
-    await frontRight(int(3 * 360), 50)
+    await frontRight(int(2.5 * 360), 50)
     await backward(40, 70)
     await turnRight(45)
     await backward(25, 60)
@@ -106,6 +106,6 @@ async def run_yellow():
 
 
 if __name__ == "__main__":
-    await run_yellow()
+    runloop.run(run_yellow())
     import sys
     sys.exit()
