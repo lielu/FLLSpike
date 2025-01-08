@@ -76,26 +76,40 @@ async def run_yellow():#Start right back piece on farthest dark line in red squa
     #return_from_mission3()
 
 async def mission3():
-    runloop.run(frontLeft(int(3 * 360), 50), forward(48, 50))
-    await turnLeft(40)
-    await forward(47, 40)
-    await frontRight(int(3.5 * 360), 50)
+    await forward(48, 50)
+    await turnLeft(37)
+    await forward(37, 40)
+    time.sleep(0.2)
     await forward(5, 40)
-    await backward(7, 40)
+    await frontRight(int(6 * 360), 50)
+    await frontLeft(int(3 * 360), 50)
+    await backward(10, 40)
     await turnRight(30)
     await backward(50, 50)
     await turnLeft(45)
     await backward(20, 50)
 
+async def collecting():
+    await forward(30, 70)
+    await turnLeft(32)
+    await forward(33, 50)
+    await frontRight(int(3 * 360), 50)
+    await backward(40, 70)
+    await turnRight(45)
+    await backward(25, 60)
 
-if __name__ == "__main__":
+async def run_yellow():
     while not (button.pressed(button.LEFT) or button.pressed(button.RIGHT)):
         pass
     #right and left are inverted based on how our hub faces
     if button.pressed(button.RIGHT): #left button
         runloop.run(mission3())
     elif button.pressed(button.LEFT): #right button
-        runloop.run(domission3())
+        runloop.run(collecting())
+
+
+if __name__ == "__main__":
+    await run_yellow()
     import sys
     sys.exit()
 """
