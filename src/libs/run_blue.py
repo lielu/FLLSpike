@@ -3,18 +3,24 @@ from attachment import *
 from drive import *
 
 from hub import port
-
+#Put robot outer shell 1/4 way from first bold line from inside of mat#
 async def run_blue():
-    await forward(47, 100)
-    await turnLeft(49)
+    runloop.run(frontLeft(int(-6.5 * 360), 100), forward(40, 100))
+    await turnLeft(50)
     await forward(61, 100)
     await forward(10, 50)
-    await frontLeft(int(6.5 * 360), 100)
-    await backward(5, 80)
-    await turnLeft(2)
-    await backward(63, 100)
-    await turnRight(48)
-    await backward(50, 100)
+    await frontLeft(int(6.9 * 360), 100)
+    await backward(7, 80)
+    await turnLeft(67)
+    await forward(28, 100)
+    await turnRight(45)
+    await backward(20, 100)
+    await turnLeft(45)
+    await backward(12, 100)  
+    await turnRight(90)
+    await backward(40, 100)
+    await turnRight(30)
+    await backward(100, 100)
 
 if __name__ == "__main__":
     runloop.run(run_blue())
