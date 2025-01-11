@@ -28,7 +28,20 @@ def log(message):
     # print(message)
     # sys.stdout.flush()
 
-monitored_libraries = ["drive.py", "attachment.py", "run_red.py", "run_blue.py", "run_green.py", "run_yellow.py", "run_black.py", "run_grey.py", "run_orange.py", "run_violet.py"]
+monitored_libraries = [
+    "drive.py",
+    "attachment.py", 
+    "run_red.py",
+    "run_blue.py",
+    "run_green.py",
+    "run_yellow.py",
+    "run_black.py",
+    "run_grey.py",
+    "run_orange.py",
+    "run_violet.py",
+    "run_white.py"
+]
+
 empty_llsp3 = "empty.llsp3"
 
 def extract_python_from_llsp3(llsp3_file_path):
