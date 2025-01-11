@@ -9,7 +9,7 @@ import time
 from hub import port
 
 
-async def main():
+async def run_violet():
     await forward(29, 50)
     await frontLeft(80, 50)
     await forward(5,25)
@@ -22,7 +22,7 @@ async def main():
     
 
 if __name__ == "__main__":
-    runloop.run(main())
+    runloop.run(run_violet())
     import sys
     sys.exit()
 
