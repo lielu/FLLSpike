@@ -1,30 +1,31 @@
 
 # Generated code
 export_code: str = """
-import runloop, time
-from attachment import *
+import runloop
 from drive import *
+from attachment import *
+import time
 
 from hub import port
 
 
-#START WITH RIGHT BUMPER ON 1ST THICK LINE FROM RIGHT
-async def run_green():
-    await forward(65, 50)
-    await turnRight(50)
-    await forward(45, 50)
-    await turnLeft(20)
-    await backward(50,40)
-    await turnRight(80)
+async def main():
+    await forward(29, 50)
+    await frontLeft(80, 50)
+    await forward(5,25)
+    await frontLeft(38, 50)
+    await forward(21, 50)
+    await frontRight(40, 50)
+    await backward(40, 50)
+    
 
-
-
-
+    
 
 if __name__ == "__main__":
-    runloop.run(run_green())
+    runloop.run(main())
     import sys
     sys.exit()
+
 """
 
 def exportProgram():  # Function to export the library code string
@@ -32,10 +33,10 @@ def exportProgram():  # Function to export the library code string
     global export_code
     os.chdir('/flash')  # change directory to root
     try:
-        os.remove('run_green.py')  # remove any existing library file of the same name
+        os.remove('run_violet.py')  # remove any existing library file of the same name
     except:
         pass
-    f = open('run_green.py', 'w+')  # Create a new file drive.py in the SPIKE hub root
+    f = open('run_violet.py', 'w+')  # Create a new file drive.py in the SPIKE hub root
     f.write(export_code)  # Write out the library code string to the drive.py file
     f.close()
 
