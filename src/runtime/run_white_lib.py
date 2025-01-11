@@ -21,7 +21,7 @@ async def food():
     await frontRight(50, 100)
 
 if __name__ == "__main__": 
-    runloop.run(runacross())
+    runloop.run(run_white())
     #runloop.run(food())
     import sys
     sys.exit()
