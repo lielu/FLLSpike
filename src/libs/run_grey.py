@@ -8,7 +8,7 @@ from hub import port, button
 
 async def run_grey():
     #COLLECTION: STARTS AT THE SECOND TO LAST THIN LINE FROM THE RIGHT
-    '''await frontLeft(int(70*2), 100)
+    await frontLeft(int(70*2), 100)
     runloop.run(frontLeft(int(80*1.2), 100), forward(25, 50))
     await forward(30, 50)
     await frontRight(int(150*1.2), 100)
@@ -24,39 +24,7 @@ async def run_grey():
     while not button.pressed(button.LEFT):
         pass
 
-    #START WITH LEFT BUMBER ON SECOND TO LAST THIN LINE FROM RIGHT
-
-    # Navigate to squid
-    await frontLeft(int(70*1.2), 100)
-    runloop.run(forward(25, 50), frontLeft(int(80*1.2)))
-    await turnLeft(45)
-
-    # Drop squid into basket
-    await forward(14, 15)
-    time.sleep(0.5)
-
-    # Navigate to drop zone
-    await backward(10, 50)
-    await turnLeft(45)
-    await forward(50, 50)
-    await turnRight(88)
-
-    # Drop and move away
-    await forward(20, 50)
-    await frontLeft(int(6.5 * 360), 100)
-    await backward(12, 50)
-    await frontRight((5 * 360), 100)
-
-    # Navigate to home
-    await backward(12, 100)
-    await turnLeft(86)
-    await backward(50, 100)
-    await turnRight(48)
-    await backward(35, 100)
-    await frontRight(int(2 * 360), 100)
-
-    while not button.pressed(button.LEFT):
-        pass'''
+    
     
     await forward(30, 50)
     await turnLeft(30)
@@ -73,6 +41,25 @@ async def run_grey():
     await turnLeft(30, 100)
     await forward(40, 100)
 
+    #START WITH LEFT BUMBER ON SECOND TO LAST THIN LINE FROM RIGHT
+    while not button.pressed(button.LEFT):
+        pass
+
+    # Navigate to squid
+    await frontLeft(int(70*1.2), 100)
+    runloop.run(forward(25, 50), frontLeft(int(80*1.2)))
+    await turnLeft(45)
+
+    # Drop squid into basket
+    await forward(14, 15)
+    time.sleep(0.5)
+
+    # Navigate home
+    await frontRight(2*360, 100)
+    await backward(20, 100)
+    await turnRight(45)
+    await frontRight(1*360, 100)
+    await backward(30, 100)
 
     import sys
     sys.exit()
