@@ -27,8 +27,6 @@ async def run_grey():
     while not button.pressed(button.LEFT):
         pass
 
-
-
     await forward(30, 50)
     await turnLeft(30)
     await forward(40, 50)
