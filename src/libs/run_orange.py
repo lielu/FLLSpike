@@ -7,18 +7,18 @@ from hub import port
 
 
 async def run_orange():
-    await forward(30, 50)
-    await turnRight(40)
-    await forward(40, 50)
-    await turnRight(47)
-    await forward(30, 50)
-    await frontLeft(360, 50)
+    await forward(30, 70)
+    await turnRight(43)
+    await forward(40, 70)
+    await turnRight(50)
+    await forward(30, 70)
+    await frontLeft(360, 85)
     await frontRight(360, 50)
-    await backward(20, 50)
+    await backward(30, 100)
     await turnLeft(45)
-    await backward(45, 50)
+    await backward(45, 100)
     await turnLeft(45)
-    await backward(33, 50)
+    await backward(37, 100)
 
 
 
