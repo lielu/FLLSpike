@@ -8,13 +8,23 @@ from drive import *
 from hub import port
 
 
-#START WITH RIGHT BUMPER ON 1ST THICK LINE FROM RIGHT
+# Replace run_orange to be the whale mission
+# Start 45 degree at the right side corner
 async def run_green():
-    await forward(10, 50)
+    await forward(30, 70)
+    await turnRight(43)
+    await forward(40, 70)
+    await turnRight(46)
+    await forward(30, 70)
+    await frontLeft(360, 85)
+    await frontRight(360, 50)
+    await backward(30, 100)
     await turnLeft(45)
-    await forward(40, 50)
-    time.sleep(0.5)
-    await forward()
+    await backward(45, 100)
+    await turnLeft(45)
+    await backward(37, 100)
+
+
 
 
 

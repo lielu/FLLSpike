@@ -3,9 +3,9 @@ from attachment import *
 from drive import *
 
 from hub import port
-#Put robot outer shell 1/4 way from first bold line from inside of mat#
+#Robot left edge aligned with fourth thin line from left, end pushing to the wall#
 async def run_blue():
-    runloop.run(frontLeft(int(-6.5 * 360), 100), forward(40, 100))
+    await forward(40, 100)
     await turnLeft(50)
     await forward(61, 100)
     await forward(10, 50)
