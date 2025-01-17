@@ -14,17 +14,10 @@ async def run_green():
     await turnRight(46)
     await forward(30, 70)
     await frontLeft(360, 85)
-    await frontRight(360, 50)
     await backward(30, 100)
-    await turnLeft(45)
-    await backward(45, 100)
-    await turnLeft(45)
-    await backward(37, 100)
-
-
-
-
-
+    await turnLeft(90)
+    await backward(70, 100)
+    
 if __name__ == "__main__":
     runloop.run(run_green())
     import sys
