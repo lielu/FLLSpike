@@ -11,10 +11,10 @@ async def run_grey():
     await frontLeft(2*360, 100)
     runloop.run(forward(30, 50), frontLeft(int(80*1.2), 100))
     await frontRight(2*360, 100)
-    await turnLeft(45)
+    await turnLeft(50)
 
     # Drop squid into basket
-    await forward(12, 20)
+    await forward(9, 20)
 
     #COLLECTION + Squid: STARTS AT THE SECOND TO LAST THIN LINE FROM THE RIGHT
     await frontRight(140, 100)
@@ -27,11 +27,11 @@ async def run_grey():
     await frontLeft(140, 100)
     await forward(6, 50)
     await frontRight(4*360, 100)
-    await backward(30, 100)
-    await turnLeft(45)
+    await backward(10, 100)
     await frontRight(360, 100)
+    await turnRight(70)
     await backward(30, 100)
-    await turnLeft(50)
+    await turnLeft(100)
     await backward(40, 100)
     
     import sys
