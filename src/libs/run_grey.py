@@ -24,7 +24,6 @@ async def run_grey():
     await forward(35, 50)
     await frontRight(360, 100)
     await turnRight(35)
-    await frontLeft(2*360, 100)
     await forward(6, 50)
     await frontRight(4*360, 100)
     await backward(10, 100)
