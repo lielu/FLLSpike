@@ -13,12 +13,12 @@ async def run_blue():
     await forward(61, 100)
     await forward(10, 50)
     #arives at the submarine
-    await frontLeft(int(6.9 * 360), 100)
+    await frontLeft(int(6.7 * 360), 100)
     await backward(7, 80)
     await turnLeft(67)
-    await forward(28, 100)
+    await forward(25, 70)
     await turnRight(65)
-    await backward(4, 50)
+    await backward(2, 100)
     #finshes anglerfish
 
 
