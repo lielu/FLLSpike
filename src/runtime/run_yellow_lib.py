@@ -76,27 +76,27 @@ async def return_from_mission3():
     #return_from_mission3()
 
 async def mission3():
-    await forward(48, 50)
+    await forward(48, 70)
     await turnLeft(37)
-    await forward(37, 40)
+    await forward(37, 70)
     time.sleep(0.2)
-    await forward(5, 40)
+    await forward(5, 70)
     await frontRight(int(6 * 360), 50)
     await frontLeft(int(3 * 360), 50)
-    await backward(10, 40)
+    await backward(10, 70)
     await turnRight(30)
-    await backward(50, 50)
+    await backward(50, 70)
     await turnLeft(45)
-    await backward(20, 50)
+    await backward(20, 70)
 
 async def collecting():
-    await forward(30, 70)
+    await forward(30, 100)
     await turnLeft(32)
-    await forward(33, 50)
-    await frontRight(int(2.5 * 360), 50)
-    await backward(40, 70)
+    await forward(33, 100)
+    await frontRight(int(1.5 * 360), 50)
+    await backward(40, 100)
     await turnRight(45)
-    await backward(25, 60)
+    await backward(25, 100)
 
 async def run_yellow():
     while not (button.pressed(button.LEFT) or button.pressed(button.RIGHT)):
