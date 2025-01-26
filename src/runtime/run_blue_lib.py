@@ -14,6 +14,8 @@ async def run_blue():
     await forward(10, 50)
     #arives at the submarine
     await frontLeft(int(6.7 * 360), 100)
+    time.sleep(2)
+    # await frontLeft(int(-6.7 * 360), 100)
     await backward(7, 80)
     await turnLeft(67)
     await forward(25, 70)
