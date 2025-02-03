@@ -30,7 +30,7 @@ async def run_grey():
     #MOVE BACK TO SOLVE SONAR DISCOVERY
     await backward(25, 40)
     #NAVIGATE TO OCTOPUS
-    runloop.run(rearLeft(362, 100), frontRight(100, 100), backward(40, 90))
+    runloop.run(rearLeft(362, 100), frontRight(100, 100), backward(35, 90))
     await turnLeft(45)
     #SOLVE OCTOPUS
     await forward(17, 40)
