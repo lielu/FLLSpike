@@ -2,7 +2,7 @@ import runloop, time
 from attachment import *
 from drive import *
 
-from hub import port, button
+from hub import motion_sensor, port, button
 
 
 
@@ -30,9 +30,16 @@ async def run_grey():
     runloop.run(rearLeft(362, 100), frontRight(100, 100), backward(35, 90))
     await turnLeft(45)
     #SOLVE OCTOPUS
-    await forward(17, 40)
+    await forward(15, 40)
     #BRING OCTOPUS HOME
     await backward(70, 100)
+
+    while not button.pressed(button.LEFT):
+        motion_sensor.reset_yaw(0)
+    
+    await backward(14, 20)
+    await forward(15, 100)
+
     import sys
     sys.exit()
 
