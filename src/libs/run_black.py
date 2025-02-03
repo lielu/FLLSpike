@@ -8,7 +8,8 @@ from hub import port
 
 # Start 45 degree at the right side corner
 async def main():
-    await forward(30, 70)
+    await turnLeft(45)
+    await forward(26, 70)
     await turnRight(43)
     await forward(40, 70)
     await turnRight(46)
@@ -46,7 +47,7 @@ async def main():
     await turnRight(67)
     await backward(25, 70)
     await turnLeft(65)
-    
+
     # await backward(2, 100) # doesn't seem like robot needs to move
     #finshes anglerfish
 
