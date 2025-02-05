@@ -37,7 +37,8 @@ async def run_grey():
     while not button.pressed(button.LEFT):
         motion_sensor.reset_yaw(0)
     
-    await backward(14, 20)
+    # 15 is better and more consistent
+    await backward(14, 15)
     await forward(15, 100)
 
     import sys
