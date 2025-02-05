@@ -23,6 +23,7 @@ async def forward_and_turn(distance):
     
 
 async def run_white():
+<<<<<<< HEAD
     #starts with letft bumper at fourth bold line on left edge of board
     #move boat across
     await frontRight(60  , 100)
@@ -43,6 +44,23 @@ async def run_white():
     await shark_trident()
     await turnRight(15) #repoint to the home
     await forward(80, 90)
+=======
+    # starts with left bumper at fourth bold line on left edge of board, left arm all the way up with shark loosely inside
+    # bring arm down
+    await rearRight(340, 100)
+
+    # move boat across
+    await forward(39, 100) # approach boat
+    await turnLeft(1) # slow
+    await forward(10, 40) # engage at lower speed
+    await turnLeft(6) # turn to compensate
+    await forward(39, 90) # goes to shark drop zone
+    await rearLeft(90, 100) # raises to release shark
+    await forward(39, 90) # run boat to other dock
+    await backward(10, 100) # release boat
+    await frontRight(360, 100) # raise arm so boat can stay
+    await forward(80, 100) # run to end, total distance was 127
+>>>>>>> 2af8d9f649363ef3f7376357d9b324bdc3f7c9e7
 
 
 if __name__ == "__main__": 

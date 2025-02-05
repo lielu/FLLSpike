@@ -72,14 +72,25 @@ async def return_from_mission3():
     #return_from_mission3()
 
 async def mission3():
-    await forward(48, 70)
+    await forward(48, 80)
     await turnLeft(37)
-    await forward(37, 70)
+    await forward(37, 80)
     time.sleep(0.2)
+<<<<<<< HEAD
     await forward(5, 100)
     await frontRight(int(4 * 360), 70)
     await frontLeft(int(2.5 * 360), 70)
     await backward(85, 80)
+=======
+    await forward(5, 80)
+    await frontRight(int(7 * 360), 50)
+    await frontLeft(int(3 * 360), 50)
+    await backward(10, 80)
+    await turnRight(30)
+    await backward(50, 80)
+    await turnLeft(45)
+    await backward(20, 80)
+>>>>>>> 2af8d9f649363ef3f7376357d9b324bdc3f7c9e7
 
 async def collecting():
     await forward(30, 100)
