@@ -19,14 +19,8 @@ async def run_red():
         await domission_1_2_4()
     elif button.pressed(button.LEFT):
         #code to solve the tree and scuba diver
-<<<<<<< HEAD
         await do_tree()
         time.sleep(8)
-=======
-        # await do_tree()
-        # while not (button.pressed(button.LEFT) or button.pressed(button.RIGHT)):
-        #     pass
->>>>>>> 2af8d9f649363ef3f7376357d9b324bdc3f7c9e7
         await do_scuba()
 
 async def do_tree():
