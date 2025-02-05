@@ -15,7 +15,6 @@ async def collector():
     await backward(40, 60)
     await turnRight(45)
     await backward(35, 70)
-
 async def domission3():
     #### MOVE TO MISSION 3 ####
     runloop.run(frontLeft(int(1.8 * 360), 50), forward(65, 50)) #Lowers arm
@@ -76,27 +75,23 @@ async def return_from_mission3():
     #return_from_mission3()
 
 async def mission3():
-    await forward(48, 80)
+    await forward(48, 70)
     await turnLeft(37)
-    await forward(37, 80)
+    await forward(37, 70)
     time.sleep(0.2)
-    await forward(5, 80)
-    await frontRight(int(6 * 360), 50)
-    await frontLeft(int(3 * 360), 50)
-    await backward(10, 80)
-    await turnRight(30)
-    await backward(50, 80)
-    await turnLeft(45)
-    await backward(20, 80)
+    await forward(5, 100)
+    await frontRight(int(4 * 360), 70)
+    await frontLeft(int(2.5 * 360), 70)
+    await backward(85, 80)
 
 async def collecting():
     await forward(30, 100)
     await turnLeft(27)
     await forward(33, 100)
-    await frontRight(int(1.5 * 360), 50)
+    await frontRight(int(1 * 360), 50)
     await backward(40, 100)
     await turnRight(45)
-    await backward(25, 100)
+    await backward(35, 100)
 
 async def run_yellow():
     while not (button.pressed(button.LEFT) or button.pressed(button.RIGHT)):
