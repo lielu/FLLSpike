@@ -16,9 +16,9 @@ async def run_grey():
     await forward(40, 100)
     await turnLeft(15)
     await forward(20, 80)
-    await frontRight(450, 100)
+    await frontRight(720, 100)
     await turnRight(55)
-    await frontLeft(360, 100)
+    await frontLeft(720, 100)
     await forward(4, 100)
     #CLOSE CLAW TO SECURE KRILL
     await frontRight(720, 100)
