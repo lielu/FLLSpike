@@ -14,7 +14,7 @@ async def run_green():
     await turnRight(46)
     await forward(20, 40)
     await frontLeft(450, 85)
-    await backward(30, 100)
+    await backward(32, 100)
     await turnLeft(90)
     await backward(70, 100)
     
