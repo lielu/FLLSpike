@@ -15,11 +15,11 @@ async def run_grey():
     #BEGIN COLLECT KRILL
     await forward(37, 100)
     await turnLeft(15)
-    await forward(20, 80)
+    await forward(20, 60)
     await frontRight(720, 100)
     await turnRight(55)
     await frontLeft(720, 100)
-    await forward(5, 100)
+    await forward(5, 60)
     #CLOSE CLAW TO SECURE KRILL
     await frontRight(720, 100)
     #NAVIGATE TO SONAR DISCOVERY
