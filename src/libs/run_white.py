@@ -7,8 +7,10 @@ async def shark_trident():
     
     await rearRight(int(2 * 360), 50)
     time.sleep(0.4)
-    await forward(8, 60)
-    runloop.run(rearLeft(int(1.5 * 360), 50), forward(25, 70))
+    await forward(20, 50)
+    await rearLeft(int(1 * 360), 50)
+    await forward(10, 70)
+    await rearLeft(int(.5 * 360), 50)
     await frontRight(100, 100)
 async def food():
     await frontRight(360, 100)
@@ -22,21 +24,26 @@ async def forward_and_turn(distance):
 async def run_white():
     #starts with letft bumper at fourth bold line on left edge of board
     #move boat across
-    await frontRight(60  , 100)
+    await frontRight(90, 100)
     #return
     await forward(40, 60) #approach boat and lift arm slightly
-    await turnLeft(3) #slow
+    #await turnLeft(3) #slow
+    time.sleep(0.5)
+    await frontLeft(90,100)
+    time.sleep(0.5)
+    await turnLeft(5) #slow
     await forward(83, 80) #engage at lower speed
-    #await turnLeft(5) #turn to compensate
+    await turnLeft(5) #turn to compensate
+    
     #await forward(5, 50)
     #time.sleep(0.1) #run to end, total distance was 127
     #await turnLeft(16)
     #await forward_and_turn(90)
     #await turnLeft(10)
     await backward(10, 90) #Back away from the ship
-    await frontRight(80, 100) #raise the arm
-    await turnLeft(5) #adjust position 
-    await backward(22, 75) # back up to the trident
+    await frontRight(125, 100) #raise the arm
+    #await turnLeft(5) #adjust position 
+    await backward(18, 75) # back up to the trident
     await shark_trident()
     await turnRight(20) #repoint to the home
     await forward(80, 90)
