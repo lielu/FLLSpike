@@ -36,12 +36,12 @@ async def run_grey():
     #BRING OCTOPUS HOME
     await backward(55, 100)
 
-    while not button.pressed(button.LEFT):
-        motion_sensor.reset_yaw(0)
+    # while not button.pressed(button.LEFT):
+    #     motion_sensor.reset_yaw(0)
 
-    # 15 is better and more consistent
-    await backward(14, 15)
-    await forward(15, 100)
+    # # 15 is better and more consistent
+    # await backward(14, 15)
+    # await forward(15, 100)
 
     import sys
     sys.exit()
