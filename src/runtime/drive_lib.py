@@ -30,7 +30,7 @@ async def forwardByDegrees(distance, speed): #FUNCTION
             motor_pair.move_for_degrees(motor_pair.PAIR_1, int(rotation), adjusted, velocity=int(round(speed/100.0*motor_speed)), stop=motor.CONTINUE) #Move forward 60 degrees, check again
         except(ValueError):#This runs if the robot finds that the value is too big(100, -100)
             #print('value error: ', adjusted)##prints if finds error
-            motor_pair.move_for_degrees(motor_pair.PAIR_1, int(rotation), int(round(adjusted / 3)), velocity=int(round(speed/100.0*motor_speed)), stop=motor.CONTINUE) # Reduces turn amount so no value error
+            motor_pair.move_for_degrees(motor_pair.PAIR_1, int(rotation), int(round(adjusted / 6)), velocity=int(round(speed/100.0*motor_speed)), stop=motor.CONTINUE) # Reduces turn amount so no value error
             # Goes to the line just under " while motor.relative…"
     motor_pair.stop(motor_pair.PAIR_1, stop=motor.SMART_BRAKE)#stops motor after done with distance
 
@@ -48,7 +48,7 @@ async def backwardByDegrees(distance, speed): #Basically the same as the first c
             motor_pair.move_for_degrees(motor_pair.PAIR_1, int(rotation), adjusted, velocity=int(round(speed/100.0*motor_speed)), stop=motor.CONTINUE)
         except(ValueError):
             #print('value error: ', adjusted)
-            motor_pair.move_for_degrees(motor_pair.PAIR_1, int(rotation), int(round(adjusted / 3)), velocity=int(round(speed/100.0*motor_speed)), stop=motor.CONTINUE)
+            motor_pair.move_for_degrees(motor_pair.PAIR_1, int(rotation), int(round(adjusted / 6)), velocity=int(round(speed/100.0*motor_speed)), stop=motor.CONTINUE)
     motor_pair.stop(motor_pair.PAIR_1, stop=motor.SMART_BRAKE)
 
 async def turnRightByDegrees(degrees): #Function for turn right code
