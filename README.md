@@ -63,7 +63,7 @@ After you make changes to the Spike projects, which will update the LLSP3 files 
 #### `src/runs`: Contains the LLSP3 files for the main code for the robot game
 We will either have each run in code such as `run0.llsp3`, `run1.llsp3`, etc., or have one main code to capture all runs.
 #### `src/libs`: Contains the LLSP3 files for the library code that can be used across multiple runs.
-The libraries include code for the robot such as `Straight`, `Turn`, `Arm`, `Claw`, `Sensor`, `Display`, etc. The [library document](src/libs/LibraryDoc.md) provides more details.
+The libraries include code for the robot such as `Straight`, `Turn`, `Arm`, `Claw`, `Sensor`, `Display`, etc. The [library document](src/libs/LIBRARY.md) provides more details.
 ### `docs`: Contains the documentation for robot game, innovation project, and more
 
 ### `utils`: Contains the utility scripts for FLL robotics logistics
